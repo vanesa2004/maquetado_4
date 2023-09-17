@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box; /* tamaño de caja */
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container >*{  /* contenedor de */
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 1px;
+    padding: 10px;
+    text-align: center;   
+}
+
+.header{
+    grid-area: header;
+    background-color: #ffffff;
+}
+
+.imgencabezado{
+    float: left;
+    margin-left: 30px;
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+.slider{
+    grid-area: slider;
+    background-color: rgb(227, 238, 238);
+    border: 1px solid black;
+}
+
+.img{
+    width: 415px;
+}
+
+#imagenes{
+    width: 415px;
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+#imagenes ul{
+    list-style: none;
+    width: 2075px;
+    display: flex;
+
+    animation: slide 20s infinite alternate;
+}
+
+@keyframes slide{
+    0%{margin-left: 0px;}
+    15%{margin-left: 0px;}
+
+    20%{margin-left: -415px;}
+    35%{margin-left: -415px;}
+
+    40%{margin-left: -830px;}
+    55%{margin-left: -830px;}
+
+    60%{margin-left: -1245px;}
+    75%{margin-left: -1245px;}
+
+    80%{margin-left: -1660px;}
+    100%{margin-left: -1660px;}
+}
+
+.section{
+    grid-area: section;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 15px;
+}
+
+.article{
+    grid-area: article;
+    background-color: #f6f9fa;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+}
+
+.footer {
+    grid-area: footer;
+    background-image: url(../img/pie_copia.jpg);
+}
+
+
+.grid-container {
+    display: grid;
+    gap: 5px;
+    grid-template-areas: 
+        "header"
+        "slider"
+        "section"
+        "footer"
+        ;
+}
+
+@media (min-width: 1080px){
+    .grid-container {
+        grid-template: 
+            "header header header" 170px    
+            "slider slider slider" 300px
+            "section section section"300px
+            "footer footer footer" 140px /
+            200px auto 200px;
+    }
+    }
